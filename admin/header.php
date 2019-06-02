@@ -26,11 +26,11 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="index.php">Dashboard</a></li>
-            <li><a href="pages.php">Home</a></li>
-            <li><a href="pages.php">Subjects</a></li>
-            <li><a href="pages.php">Faculty</a></li>
-            <li><a href="pages.php">Course</a></li>
-            <li><a href="users.php">Schedule</a></li>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="addsubject.php">Subjects</a></li>
+            <li><a href="addfaculty.php">Faculty</a></li>
+            <li><a href="addcourse.php">Course</a></li>
+            <li><a href="tablelist.php">Schedule</a></li>
           </ul>
           </ul>
           <ul class="nav navbar-nav navbar-right">
