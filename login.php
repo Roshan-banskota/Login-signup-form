@@ -14,48 +14,40 @@
                 $Username = mysqli_real_escape_string($con,$_POST['username']);
                 $Password = mysqli_real_escape_string($con,$_POST['password']);
     
-                $sql= "Select * FROM users where username ='".$Username."' or email='".$Username."'and password ='".$Hash."'";
-                //$sql = "SELECT * FROM `users` WHERE username='$Username'and password='".Hash."'";
-                //$sql=" select * from userlogin where UserName='".$UserName."' or Email='".$UserName."'";
+                $sql = " SELECT * FROM users WHERE username = '$Username' AND password = '$Password' ";
                 $result = mysqli_query($con,$sql);
-    
-                if($row=mysqli_fetch_assoc($result))
+                if (mysqli_num_rows($result) == 1) 
                 {
-                    //$HashPass = password_verify($Password,$row['Password']);
-                    $HashPass = password_hash($password, PASSWORD_DEFAULT);
                     
-    
-                            if($HashPass==false)
-                            {
-                                header("location:logindesign.php?P_Invalid");
-                                exit();
-                            }
-                            elseif($HashPass==true)
-                        {
-                            $_SESSION['U_D']=$row['id'];
-                            $_SESSION['Username']=$row['Username'];
-                            $_SESSION['Email']=$row['email'];
-                            $_SESSION['Password']=$row['password'];
-        
-                            header("location:admindash.php?Wellcome");
-                            exit();
-        
-                        }
- 
-                    }
-                    else
+                    if($Password==false)
                     {
-                        header("location:logindesign.php?U_Invalid");
+                        header("location:logindesign.php?P_Invalid");
                         exit();
+                    
+                        
+                    
+                    }
+                    elseif($Password==true)
+                    {
+                        // $_SESSION['U_D']=$row['id'];
+                        // $_SESSION['Username']=$row['username'];
+                        // $_SESSION['Password']=$row['password'];
+     
+                        header("location:admindash.php?Well");
+                        exit();
+                        
+     
+                    }
+     
+                }
+                else
+                {
+                    header("location:logindesign.php?U_Invalid");
+                    exit();
+                }
                 
-                    } 
-                 }
-            }
-            else
-    {
-        header("location:logindesign.php");
-        exit();
+        }
     }
-
-
-?>          
+            
+    
+?>
