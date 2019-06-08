@@ -5,46 +5,39 @@
         <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"/>
         <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
     </head>
-    <body style="background:#CCC">
+    <body >
 
     <div class="container">
-
-
-        <div id="login-form">
-           
-
-                <div class="col-md-12">
-
+        <div id="login-form">    
+            <div class="col-md-12"> 
                     <div class="form-group">
-                    <h2 class="text-center py-2">Login Form</h2>
+                        <h2 class="text-center py-2">Login Form</h2>
                     </div>
 
-                    <?php
-                        
+                    <?php                        
                             if(isset($_GET['empty']))
                             {
                                 $Message=$_GET['empty'];
                                 $Message= " Please Fill in the Blanks";
-                        ?>
+                    ?>
                             <div class="alert alert-danger text-center"><?php echo $Message ?></div>                            
-                        <?php                            
+                    <?php                            
                             }
                         
-                        ?>
+                    ?>     
      
-     
-                          <?php
+                    <?php
                         
                             if(isset($_GET['U_Invalid']))
                             {
                                 $Message=$_GET['U_Invalid'];
                                 $Message= " Wrong username/Password Combination";
-                        ?>
+                    ?>
                             <div class="alert alert-danger text-center"><?php echo $Message ?></div>                            
-                        <?php                            
+                    <?php                            
                             }
                         
-                        ?>
+                    ?>
      
      
                             <?php
@@ -99,9 +92,9 @@
                         </div>
 
                      </form>
+                 </div>
+            </div>
         </div>
-
-    </div>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     </body>
